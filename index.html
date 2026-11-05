@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="uk">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="Мандрівник — тревел-блог про міста, природу та захопливі маршрути світом" name="description"/>
+  <title>
+   Мандрівник — історії, що кличуть у дорогу
+  </title>
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header>
+   <nav aria-label="Головна навігація" class="navbar navbar-expand-lg sticky-top py-3">
+    <div class="container">
+     <a class="navbar-brand fs-4" href="#top">
+      <span class="brand-symbol">
+       ✦
+      </span>
+      мандрівник
+      <span style="color:var(--teal)">
+       .
+      </span>
+     </a>
+     <button aria-controls="mainNav" aria-expanded="false" aria-label="Відкрити меню" class="navbar-toggler" data-bs-target="#mainNav" data-bs-toggle="collapse" type="button">
+      <span class="navbar-toggler-icon">
+      </span>
+     </button>
+     <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav mx-auto gap-lg-3">
+       <li class="nav-item">
+        <a class="nav-link" href="#stories">
+         Статті
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#categories">
+         Напрямки
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#about">
+         Про блог
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#subscribe">
+         Підписка
+        </a>
+       </li>
+      </ul>
+      <div class="search-wrap">
+       <label class="visually-hidden" for="searchInput">
+        Пошук статей
+       </label>
+       <input aria-label="Пошук статей" class="form-control" id="searchInput" placeholder="Пошук подорожей..." type="search"/>
+      </div>
+     </div>
+    </div>
+   </nav>
+  </header>
+  <main id="top">
+   <div class="container pt-4 pb-5">
+    <section aria-labelledby="heroTitle" class="hero mb-5">
+     <div class="hero-content">
+      <span class="eyebrow">
+       РИМ · ІТАЛІЯ
+      </span>
+      <h1 class="mt-3 mb-3" id="heroTitle">
+       Три дні в Римі — і жодного поспіху
+      </h1>
+      <p class="mb-4">
+       З Колізею — до маленьких кав’ярень і тихих вулиць Трастевере. Маршрут, у якому знайшлося місце і для відомих пам’яток, і для випадкових зупинок.
+      </p>
+      <button class="btn btn-accent" id="latestPost">
+       Читати про Рим ↗
+      </button>
+     </div>
+    </section>
+    <section aria-labelledby="storiesHeading" class="scroll-top" id="stories">
+     <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 mb-3">
+      <div>
+       <span class="text-uppercase fw-bold small" style="color:var(--teal);letter-spacing:.15em">
+        НОТАТКИ ПРО МІСТА І МАРШРУТИ
+       </span>
+       <h2 class="section-heading mt-2 mb-1" id="storiesHeading">
+        Куди поїхати і що подивитися
+       </h2>
+       <p class="muted mb-0">
+        Міста на вихідні, гірські стежки, цікаві місця та маршрути різної складності.
+       </p>
+      </div>
+      <span class="small muted" id="resultCount" role="status">
+      </span>
+     </div>
+     <div aria-label="Фільтр категорій" class="scroll-top d-flex flex-wrap gap-2 my-4" id="categories">
+      <button aria-pressed="true" class="category-btn active" data-category="Усі" type="button">
+       Усі
+      </button>
+      <button aria-pressed="false" class="category-btn" data-category="Європа" type="button">
+       Європа
+      </button>
+      <button aria-pressed="false" class="category-btn" data-category="Азія" type="button">
+       Азія
+      </button>
+      <button aria-pressed="false" class="category-btn" data-category="Африка" type="button">
+       Африка
+      </button>
+      <button aria-pressed="false" class="category-btn" data-category="Південна Америка" type="button">
+       Південна Америка
+      </button>
+      <button aria-pressed="false" class="category-btn" data-category="Північна Америка" type="button">
+       Північна Америка
+      </button>
+      <button aria-pressed="false" class="category-btn" data-category="Океанія" type="button">
+       Океанія
+      </button>
+     </div>
+     <div class="filter-additions mb-4">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-3">
+       <div class="d-flex flex-wrap align-items-center gap-2">
+        <strong class="small text-uppercase filter-label">
+         Теми:
+        </strong>
+        <div aria-label="Фільтр за тегами" class="d-flex flex-wrap gap-2" id="tagFilters">
+        </div>
+       </div>
+       <div class="d-flex align-items-center gap-2">
+        <label class="small fw-semibold text-nowrap" for="sortSelect">
+         Сортування:
+        </label>
+        <select aria-label="Сортування статей" class="form-select form-select-sm filter-sort" id="sortSelect">
+         <option value="newest">
+          Новіші
+         </option>
+         <option value="popular">
+          Популярні
+         </option>
+         <option value="rating">
+          За рейтингом
+         </option>
+        </select>
+       </div>
+      </div>
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+       <span class="small muted" id="filterSummary" role="status">
+        Показано всі категорії
+       </span>
+       <button class="btn btn-sm btn-outline-success rounded-pill" id="resetFilters" type="button">
+        Скинути фільтри
+       </button>
+      </div>
+     </div>
+     <div class="row g-4">
+      <div class="col-lg-9">
+       <div aria-live="polite" class="small mb-3" id="dataNotice" role="status">
+       </div>
+       <div class="alert alert-light border" id="loadingState" role="status">
+        Завантаження історій…
+       </div>
+       <div class="alert alert-danger" hidden="" id="errorState" role="alert">
+        <strong>
+         Статті не завантажено.
+        </strong>
+        Перевірте posts.json та запустіть сайт через Live Server або GitHub Pages.
+        <button class="btn btn-outline-danger btn-sm ms-2" id="retryButton" type="button">
+         Спробувати ще раз
+        </button>
+       </div>
+       <div class="row g-4" id="articleGrid">
+       </div>
+       <div class="empty mt-3" hidden="" id="emptyState">
+        <h3 class="h5 fw-bold">
+         Нічого не знайдено
+        </h3>
+        <p class="muted">
+         Спробуйте інший запит або категорію.
+        </p>
+        <button class="btn btn-outline-success rounded-pill" id="clearSearch">
+         Очистити фільтри
+        </button>
+       </div>
+       <div class="mt-4" hidden="" id="pagingControls">
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3">
+         <div aria-label="Режим перегляду" class="d-flex gap-2" role="group">
+          <button class="btn btn-sm btn-outline-success active" id="modePages" type="button">
+           Сторінки
+          </button>
+          <button class="btn btn-sm btn-outline-success" id="modeInfinite" type="button">
+           Безперервна стрічка
+          </button>
+         </div>
+         <span class="small muted" id="pagingSummary">
+         </span>
+        </div>
+        <nav aria-label="Перемикання сторінок" class="d-flex flex-wrap justify-content-center gap-2" id="pagination">
+        </nav>
+        <div class="text-center mt-4" hidden="" id="loadMoreWrap">
+         <button class="btn btn-accent" id="loadMoreBtn" type="button">
+          Завантажити ще 9
+         </button>
+         <p class="small muted mt-2 mb-0">
+          Або прокрутіть нижче, щоб підвантажити більше.
+         </p>
+         <div aria-hidden="true" id="loadSentinel">
+         </div>
+        </div>
+       </div>
+      </div>
+      <aside aria-label="Бічна панель блогу" class="col-lg-3">
+       <section class="side-panel">
+        <h3>
+         Категорії
+        </h3>
+        <div id="sidebarCategories">
+        </div>
+       </section>
+       <section class="side-panel">
+        <h3>
+         Популярне
+        </h3>
+        <div id="popularPosts">
+        </div>
+       </section>
+       <section class="side-panel scroll-top" id="about">
+        <span class="badge-topic">
+         ПРО БЛОГ
+        </span>
+        <h3 class="mt-3 mb-2">
+         Привіт, мандрівнику!
+        </h3>
+        <p class="muted small mb-0">
+         Тут зібрані ідеї для поїздок, неспішні маршрути та історії про різні куточки світу. Обирай напрямок і знаходь своє натхнення.
+        </p>
+       </section>
+      </aside>
+     </div>
+    </section>
+    <section class="newsletter mt-5 scroll-top" id="subscribe">
+     <div class="row align-items-center g-4">
+      <div class="col-lg-6">
+       <span class="eyebrow">
+        БУДЬМО НА ЗВ’ЯЗКУ
+       </span>
+       <h2 class="mt-2">
+        Нове в блозі — без зайвого шуму
+       </h2>
+       <p class="mb-0">
+        Час від часу — нові маршрути, добірки місць та статті про подорожі.
+       </p>
+      </div>
+      <div class="col-lg-6">
+       <form class="row g-2" id="newsletterForm">
+        <div class="col-sm-8">
+         <label class="visually-hidden" for="email">
+          Електронна пошта
+         </label>
+         <input class="form-control" id="email" name="email" placeholder="Твоя електронна адреса" required="" type="email"/>
+        </div>
+        <div class="col-sm-4 d-grid">
+         <button class="btn" type="submit">
+          Підписатись ↗
+         </button>
+        </div>
+       </form>
+       <div aria-live="polite" class="small mt-2" id="subscribeNotice" role="status">
+        Введіть email, щоб перевірити форму.
+       </div>
+      </div>
+     </div>
+    </section>
+   </div>
+  </main>
+  <footer class="footer py-4">
+   <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+    <div>
+     <a class="fw-bold fs-5" href="#top">
+      ✦ мандрівник.
+     </a>
+     <div class="small muted">
+      Нотатки про подорожі та цікаві місця
+     </div>
+    </div>
+    <div class="d-flex gap-3 align-items-center">
+     <a aria-label="Instagram" class="social" href="https://www.instagram.com/" rel="noopener noreferrer" target="_blank">
+      ig
+     </a>
+     <a aria-label="Pinterest" class="social" href="https://www.pinterest.com/" rel="noopener noreferrer" target="_blank">
+      p
+     </a>
+     <a aria-label="YouTube" class="social" href="https://www.youtube.com/" rel="noopener noreferrer" target="_blank">
+      ▶
+     </a>
+    </div>
+    <small class="muted">
+     © 2026 Мандрівник
+    </small>
+   </div>
+  </footer>
+  <div aria-hidden="true" aria-labelledby="modalLabel" class="modal fade" id="postModal" tabindex="-1">
+   <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+    <div class="modal-content rounded-4 border-0">
+     <div class="modal-header border-0 pb-0">
+      <h2 class="modal-title fs-4 fw-bold" id="modalLabel">
+      </h2>
+      <button aria-label="Закрити" class="btn-close" data-bs-dismiss="modal" type="button">
+      </button>
+     </div>
+     <div class="modal-body">
+      <img alt="" class="modal-img mb-3" id="modalImg" onerror="this.onerror=null;this.src='placeholder.svg'"/>
+      <p class="meta" id="modalMeta">
+      </p>
+      <div class="d-flex flex-wrap gap-2 mb-3" id="modalTags">
+      </div>
+      <div class="small muted mb-3" id="modalViews">
+      </div>
+      <p class="lh-lg" id="modalText">
+      </p>
+     </div>
+     <div class="modal-footer border-0">
+      <button class="btn btn-outline-secondary rounded-pill" data-bs-dismiss="modal" type="button">
+       Закрити
+      </button>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script crossorigin="anonymous" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <script src="fallback-posts.js">
+  </script>
+  <script src="script.js">
+  </script>
+ </body>
+</html>
